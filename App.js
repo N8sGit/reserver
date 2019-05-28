@@ -13,7 +13,7 @@ import {client} from './index'
 
 import ReservationAdd from './screens/reservationAdd'
 import ReservationDisplay from './screens/reservationDisplay'
-
+import AppContainer from './navigation/AppNavigator'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,9 +27,7 @@ export default class App extends Component<Props> {
   render() {
     return (
     <ApolloProvider client={client}>
-      <View style={styles.container}>
-        <ReservationDisplay/>
-      </View>
+     <AppContainer/>
     </ApolloProvider>
     );
   }
