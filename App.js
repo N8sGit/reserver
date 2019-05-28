@@ -8,6 +8,12 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { ApolloProvider } from 'react-apollo';
+import {client} from './index'
+
+import ReservationAdd from './screens/reservationAdd'
+import ReservationDisplay from './screens/reservationDisplay'
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,11 +26,11 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
+    <ApolloProvider client={client}>
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <ReservationDisplay/>
       </View>
+    </ApolloProvider>
     );
   }
 }
