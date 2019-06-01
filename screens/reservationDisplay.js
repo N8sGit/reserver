@@ -14,15 +14,16 @@ import {
 } from 'react-native';
 
 import GetReservations from '../components/getReservations'
-export default class ReservationDisplay extends React.Component {
+
+export default class ReservationDisplay extends React.PureComponent {
   
   render() {
     
     return (
       <SafeAreaView style={styles.container}>
-        <View style={{flex: 1}}></View>
+        <ScrollView style={{flex: 1}}>
           <GetReservations/>
-        <View style={{flex: 1}}></View>
+        </ ScrollView >
       </SafeAreaView>
     );
   }
