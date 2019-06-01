@@ -13,15 +13,14 @@ import {
   View,
 } from 'react-native';
 
+import Add from '../components/addReservation'
 
-export default class ReservationAdd extends React.Component {
+export default class ReservationAdd extends React.PureComponent {
 
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <View style={{flex: 1}}></View>
-        <Text>Add</Text>
-        <View style={{flex: 1}}></View>
+       <Add/>
       </SafeAreaView>
     );
   }
