@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, View, ScrollView, Button, TextInput, FlatList } from 'react-native';
 import gql from 'graphql-tag';
 import { Mutation } from "react-apollo";
+import DatePicker from 'react-native-datepicker'
+
 
 const ADD_RESERVATION = gql`
  mutation createReservation($name: String!, 
@@ -20,8 +22,8 @@ const ADD_RESERVATION = gql`
     state = {
       name: '',
       hotelName: '',
-      arrivalDate: '',
-      departureDate: ''
+      arrivalDate: new Date(),
+      departureDate: new Date()
     };
   
     render() {
@@ -50,26 +52,42 @@ const ADD_RESERVATION = gql`
                   placeholder='Hotel'
                   onChangeText={hotelName => this.setState({hotelName})}
                 />
-                <TextInput
-                  style={styles.input}
-                  placeholder='Arrival'
-                  onChangeText={arrivalDate => this.setState({arrivalDate})}
+                <Text style={{marginLeft:15}}>Arrival</Text>
+                 <DatePicker
+                  date={new Date(arrivalDate)}
+                  mode="datetime"
+                  format="MM-DD-YYYY"
+                  style={{ margin: 15,
+                    borderWidth: 1,
+                    width: 350
+                    }}
+                  cancelBtnText = "Cancel"
+                  confirmBtnText='Confirm'
+                  onDateChange={(date)=> { this.setState({arrivalDate:date})}}
+                />
+                <Text style={{marginLeft:15}}>Departure</Text>
+                <DatePicker
+                  date={new Date(departureDate)}
+                  mode="datetime"
+                  format="MM-DD-YYYY"
+                  style={{ margin: 15,
+                    borderWidth: 1,
+                    width: 350
+                    }}
+                  cancelBtnText = "Cancel"
+                  confirmBtnText='Confirm'
+                  onDateChange={(date)=> { this.setState({departureDate:date})}}
+                />
                 
-                />
-                 <TextInput
-                  style={styles.input}
-                  placeholder='Departure'
-                  onChangeText={arrivalDate => this.setState({departureDate})}
-                />
                 <Button
                   title="Add Reservation"
                   onPress={() => {
                   createReservation({
                     variables: {
-                      name: this.state.name,
-                      hotelName: this.state.hotelName,
-                      arrivalDate: this.state.arrivalDate,
-                      departureDate: this.state.departureDate
+                      name: name,
+                      hotelName: hotelName,
+                      arrivalDate: arrivalDate,
+                      departureDate: departureDate
                     }
                   })
                 }}

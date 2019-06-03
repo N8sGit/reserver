@@ -1,10 +1,18 @@
 import {createStackNavigator, createBottomTabNavigator, createAppContainer} from 'react-navigation';
 
-import ReservationDisplay from '../screens/reservationDisplay'
-import ReservationAdd from '../screens/reservationAdd'
+import ReservationDisplay from '../screens/displayContainer'
+import ReservationAdd from '../screens/addContainer'
+import SingleReservation from '../screens/singleReservation'
+import ReservationList from '../components/getReservations'
+
+const DisplayStack = createStackNavigator({
+  ReservationDisplay,
+  ReservationList,
+  SingleReservation
+})
 
 const MainNavigator = createBottomTabNavigator({
-  Display: {screen: ReservationDisplay},
+  Display: DisplayStack,
   Add: {screen: ReservationAdd},
   
 },{
