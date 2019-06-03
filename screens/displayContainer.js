@@ -1,16 +1,7 @@
 import React from 'react';
 import {
-  AsyncStorage,
-  Button,
-  Image,
-  Platform,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+ SafeAreaView,
+ StyleSheet,
 } from 'react-native';
 
 import GetReservations from '../components/getReservations'
@@ -18,13 +9,10 @@ import GetReservations from '../components/getReservations'
 export default class ReservationDisplay extends React.PureComponent {
   
   render() {
-    
     return (
       <SafeAreaView style={styles.container}>
-        <ScrollView style={{flex: 1}}>
-          <GetReservations/>
-        </ ScrollView >
-      </SafeAreaView>
+        <GetReservations navigation ={this.props.navigation}/>
+       </SafeAreaView>
     );
   }
 }

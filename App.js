@@ -11,8 +11,8 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import {client} from './index'
 
-import ReservationAdd from './screens/reservationAdd'
-import ReservationDisplay from './screens/reservationDisplay'
+import ReservationAdd from './screens/addContainer'
+import ReservationDisplay from './screens/displayContainer'
 import AppContainer from './navigation/AppNavigator'
 
 const instructions = Platform.select({

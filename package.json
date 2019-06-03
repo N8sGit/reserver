@@ -14,9 +14,12 @@
     "apollo-link-http": "^1.5.14",
     "graphql": "^14.3.1",
     "graphql-tag": "^2.10.1",
-    "react": "16.8.3",
+    "react": "^16.8.3",
     "react-apollo": "^2.5.6",
+    "react-datepicker": "^2.6.0",
+    "react-dom": "^16.8.6",
     "react-native": "0.59.8",
+    "react-native-datepicker": "^1.7.2",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.11.0"
   },
