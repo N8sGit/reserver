@@ -58,8 +58,7 @@ const ADD_RESERVATION = gql`
                   mode="datetime"
                   format="MM-DD-YYYY"
                   style={{ margin: 15,
-                    borderWidth: 1,
-                    width: 350
+                    width: 380
                     }}
                   cancelBtnText = "Cancel"
                   confirmBtnText='Confirm'
@@ -71,8 +70,7 @@ const ADD_RESERVATION = gql`
                   mode="datetime"
                   format="MM-DD-YYYY"
                   style={{ margin: 15,
-                    borderWidth: 1,
-                    width: 350
+                    width: 380
                     }}
                   cancelBtnText = "Cancel"
                   confirmBtnText='Confirm'

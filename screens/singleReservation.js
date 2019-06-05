@@ -34,7 +34,7 @@ const SingleReservation = (props) => {
       card: {
         borderWidth: 3,
         borderRadius: 3,
-        borderColor: '#000',
+        borderColor: 'blue',
         width: 300,
         height: 200,
         padding: 10
